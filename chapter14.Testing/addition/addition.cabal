@@ -1,0 +1,27 @@
+cabal-version:       >=1.10
+name:                addition
+version:             0.1.0.0
+license-file:        LICENSE
+author:              Andy Filchev
+category:            Text
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+
+-- executable addition
+--   main-is:             Main.hs
+--   -- other-modules:
+--   -- other-extensions:
+--   build-depends:       base >=4.13 && <4.14
+--   -- hs-source-dirs:
+--   default-language:    Haskell2010
+
+
+library 
+  exposed-modules:      Addition
+  ghc-options:          -Wall -fwarn-tabs
+  build-depends:        base >= 4.7 && <5
+                        , hspec
+                        , QuickCheck
+                        , random
+  hs-source-dirs:       .
+  default-language:     Haskell2010        
