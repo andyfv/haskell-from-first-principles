@@ -7,4 +7,3 @@ instance Functor (Sum a) where
     fmap f (Second b) = Second (f b)
 
 
-applyIfSecond :: ()
