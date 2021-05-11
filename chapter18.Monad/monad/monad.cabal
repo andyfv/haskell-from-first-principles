@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 76429c5928f9c4cec436b599d89e65b14ba26d9528a20c44be1d209d8936ecf5
+-- hash: dc0cab832ebadff6f0f90e338eeee963f3dd5528dcc42085d74bc3422ec0807f
 
 name:           monad
 version:        0.1.0.0
@@ -32,12 +32,15 @@ library
       EitherMonad
       Lib
       MonadUse
+      Sum
   other-modules:
       Paths_monad
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
+    , checkers
   default-language: Haskell2010
 
 executable monad-exe
@@ -46,7 +49,9 @@ executable monad-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
+    , checkers
     , monad
   if false
     other-modules:
@@ -56,11 +61,15 @@ executable monad-exe
 test-suite monad-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
+  other-modules:
+      BadMonad
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
+    , checkers
     , monad
   if false
     other-modules:
