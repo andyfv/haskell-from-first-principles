@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: dc0cab832ebadff6f0f90e338eeee963f3dd5528dcc42085d74bc3422ec0807f
+-- hash: 58b9c6bd7980133d80ae788a69f513e7e1f08f88b4d90c0344d12318bebee035
 
 name:           monad
 version:        0.1.0.0
@@ -27,8 +27,10 @@ source-repository head
 
 library
   exposed-modules:
+      ApplicationAndComposition
       Bind
       BindingAndSequencing
+      ChapterExercises
       EitherMonad
       Lib
       MonadUse
@@ -41,6 +43,8 @@ library
       QuickCheck
     , base >=4.7 && <5
     , checkers
+    , hspec
+    , hspec-checkers
   default-language: Haskell2010
 
 executable monad-exe
@@ -52,6 +56,8 @@ executable monad-exe
       QuickCheck
     , base >=4.7 && <5
     , checkers
+    , hspec
+    , hspec-checkers
     , monad
   if false
     other-modules:
@@ -70,6 +76,8 @@ test-suite monad-test
       QuickCheck
     , base >=4.7 && <5
     , checkers
+    , hspec
+    , hspec-checkers
     , monad
   if false
     other-modules:
